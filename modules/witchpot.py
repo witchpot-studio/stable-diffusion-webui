@@ -35,10 +35,15 @@ def CheckModelsExist():
     LoadModel(lora_model_url, lora_models_dir_path, lora_model_name, lora_model_path)
 
     # ControlNet
-    cn_model_url = "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11f1p_sd15_depth_fp16.safetensors"
     cn_models_dir_path = os.path.abspath(os.path.join(paths.models_path, "ControlNet"))
-    cn_model_name = "control_v11f1p_sd15_depth_fp16.safetensors"
-    cn_model_path = os.path.abspath(os.path.join(cn_models_dir_path, cn_model_name))
-
     print("ControlNet_dir : " + cn_models_dir_path)
-    LoadModel(cn_model_url, cn_models_dir_path, cn_model_name, cn_model_path)
+
+    cn_depth_model_url = "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11f1p_sd15_depth_fp16.safetensors"
+    cn_depth_model_name = "control_v11f1p_sd15_depth_fp16.safetensors"
+    cn_depth_model_path = os.path.abspath(os.path.join(cn_models_dir_path, cn_depth_model_name))
+    LoadModel(cn_depth_model_url, cn_models_dir_path, cn_depth_model_name, cn_depth_model_path)
+
+    cn_normal_model_url = "https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_normalbae_fp16.safetensors"
+    cn_normal_model_name = "control_v11p_sd15_normalbae_fp16.safetensors"
+    cn_normal_model_path = os.path.abspath(os.path.join(cn_models_dir_path, cn_normal_model_name))
+    LoadModel(cn_normal_model_url, cn_models_dir_path, cn_normal_model_name, cn_normal_model_path)

@@ -17,21 +17,25 @@ def CheckModelsExist():
     print("Witchpot initialization")
 
     # StableDiffusion
-    sd_model_url = ""
-    #sd_model_dir_path = os.path.abspath(os.path.join(paths.models_path, "Stable-diffusion"))
-    sd_model_name = ""
-    sd_model_path = os.path.abspath(os.path.join(sd_model_dir_path, sd_model_name))
-    
-    print("StableDiffusion_dir : " + sd_model_dir_path)        
+    print("StableDiffusion_dir : " + sd_model_dir_path) 
+
+    #sd_model_url = ""
+    #sd_model_name = ""
+    #sd_model_path = os.path.abspath(os.path.join(sd_model_dir_path, sd_model_name))
     #LoadModel(sd_model_url, sd_model_dir_path, sd_model_name, sd_model_path)
 
     # LoRA
-    lora_model_url = "https://huggingface.co/Witchpot/icestage/resolve/main/witchpot-icestage-sd-1-5.safetensors"
     lora_models_dir_path = os.path.abspath(shared.cmd_opts.lora_dir)
+    print("LoRA_dir : " + lora_models_dir_path)
+
+    lora_model_url = "https://huggingface.co/Witchpot/icestage/resolve/main/witchpot-icestage-sd-1-5.safetensors"
     lora_model_name = "witchpot-icestage-sd-1-5.safetensors"
     lora_model_path = os.path.abspath(os.path.join(lora_models_dir_path, lora_model_name))
+    LoadModel(lora_model_url, lora_models_dir_path, lora_model_name, lora_model_path)
 
-    print("LoRA_dir : " + lora_models_dir_path)
+    lora_model_url = "https://huggingface.co/Witchpot/IsometricCanalCity/resolve/main/witchpot_isometric_canal_city.safetensors"
+    lora_model_name = "witchpot_isometric_canal_city.safetensors"
+    lora_model_path = os.path.abspath(os.path.join(lora_models_dir_path, lora_model_name))
     LoadModel(lora_model_url, lora_models_dir_path, lora_model_name, lora_model_path)
 
     # ControlNet

@@ -50,4 +50,3 @@ def CheckModelsExist():
     cn_normal_model_name = "control_v11p_sd15_normalbae_fp16.safetensors"
     cn_normal_model_path = os.path.abspath(os.path.join(cn_models_dir_path, cn_normal_model_name))
     LoadModel(cn_normal_model_url, cn_models_dir_path, cn_normal_model_name, cn_normal_model_path)
-    

@@ -1,5 +1,4 @@
 import os.path
-from os import mkdir
 from modules import paths, shared
 from modules.sd_models import model_path as sd_model_dir_path
 from basicsr.utils.download_util import load_file_from_url
@@ -17,7 +16,7 @@ def CheckModelsExist():
     print("Witchpot initialization")
 
     # StableDiffusion
-    print("StableDiffusion_dir : " + sd_model_dir_path) 
+    print("StableDiffusion_dir : " + sd_model_dir_path)
 
     #sd_model_url = ""
     #sd_model_name = ""
@@ -51,3 +50,4 @@ def CheckModelsExist():
     cn_normal_model_name = "control_v11p_sd15_normalbae_fp16.safetensors"
     cn_normal_model_path = os.path.abspath(os.path.join(cn_models_dir_path, cn_normal_model_name))
     LoadModel(cn_normal_model_url, cn_models_dir_path, cn_normal_model_name, cn_normal_model_path)
+    
